@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Todo API
+  description: A simple Todo API
+  contact:
+    email: kevin@rapidapi.com
+    url: https://twitter.com/KevinJHill
+  license:
+    url: MIT
+    name: MIT
+paths: 
+  /todo:
+    get:
+      summary: Get all todo items
+      operationId: getTodos
+      responses:
+        '200':
+          description: Successfully retrieved Todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+    post:
+      summary: Create a new todo item
+      operationId: addTodo
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        $ref: '#/components/requestBodies/Todo'
+servers:
+  - url: http://localhost:7071/api
+    description: Localhost Azure Function Server
+  - url: https://cosmosdb-mongodb-function-app-gatsby.azurewebsites.net/api
+    description: Remote Azure Function Server
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: The todo identifier
+        title:
+          type: string
+          description: The todo title
+        create_date:
+          type: string
+          format: date-time
+          description: The todo creation date
+        done_date:
+          type: string
+          format: date-time
+          description: The todo resolution date
+        status:
+          type: string
+          description: The todo state
+          enum:
+            - waiting
+            - working
+            - done
+      required:
+      - id
+      - title
+      - status
+      - create_date
+      example:
+        id: 123
+        title: Make VS Code Demo
+        description: Show the end to end API flow for creating an Azure API and integrating with RapidAPI.com
+        status: working
+        create_date: '2022-03-23T00:00:00.000Z'
+      description: A schema for a Todo item
+  requestBodies:
+    Todo:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Todo'
+tags:
+  - name: New Tag 1
