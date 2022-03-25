@@ -4,5 +4,10 @@
     "azureFunctions.projectLanguage": "TypeScript",
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.preDeployTask": "npm prune (functions)"
+    "azureFunctions.preDeployTask": "npm prune (functions)",
+    "rapidapi.demo.settings": {
+        "icon": "arrow",
+        "title": "View API on Rapid",
+        "link": "https://elio.dev"
+    }
 }
