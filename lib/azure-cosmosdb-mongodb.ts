@@ -49,3 +49,7 @@ export const addTodo = async (doc) => {
 
     return await modelToInsert.save();
 }
+
+export const getTodos = async () => {
+    return await TodoModel.find({});
+}

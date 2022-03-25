@@ -22,6 +22,11 @@ const httpTrigger: AzureFunction = async function (
                     throw Error("No document found");
                 }
                 break;
+            case "GET":
+                const todos = await db.getTodos();
+                response = {
+                    todos: todos
+                }
             default:
                 throw Error(`${req.method} not allowed`)
         }
