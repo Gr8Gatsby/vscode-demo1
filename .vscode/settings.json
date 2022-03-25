@@ -6,8 +6,8 @@
     "debug.internalConsoleOptions": "neverOpen",
     "azureFunctions.preDeployTask": "npm prune (functions)",
     "rapidapi.demo.settings": {
-        "icon": "arrow",
-        "title": "View API on Rapid",
-        "link": "https://elio.dev"
+        "icon": "share",
+        "title": "View API on RapidAPI",
+        "link": "https://rapidapi.com/build/api_7d091c4f-30e6-4e78-a7c2-036e73e3f95d/client/ef115bd4-3ad7-49c6-b79a-08d0f43a9163"
     }
 }
