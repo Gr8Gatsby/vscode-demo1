@@ -27,6 +27,7 @@ const httpTrigger: AzureFunction = async function (
                 response = {
                     todos: todos
                 }
+                break;
             default:
                 throw Error(`${req.method} not allowed`)
         }
